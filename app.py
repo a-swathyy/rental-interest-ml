@@ -4,19 +4,10 @@ import joblib
 import os
 
 BASE_DIR=os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH =os.path.join(BASE_DIR ,"rental_interest.joblib")
+MODEL_PATH =os.path.join(BASE_DIR ,"rentallist.joblib")
 model = joblib.load(MODEL_PATH)
 
-st.write("App directory:", BASE_DIR)
-st.write("Files available:", os.listdir(BASE_DIR))
-st.write("Model file exists:", os.path.exists(MODEL_PATH))
 
-if os.path.exists(MODEL_PATH):
-    model = joblib.load(MODEL_PATH)
-    st.success("Model loaded successfully!")
-else:
-    st.error("Model file is missing from the app directory.")
-    st.stop()
 
 st.set_page_config(page_title="RentHop Interest Predictor", page_icon="🏠")
 
