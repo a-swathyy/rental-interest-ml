@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
-MODEL_PATH = "rental_interest.joblib"
+BASE_DIR=os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH =os.path.join(BASE_DIR ,"rental_interest.joblib")
 model = joblib.load(MODEL_PATH)
 
 st.set_page_config(page_title="RentHop Interest Predictor", page_icon="🏠")
